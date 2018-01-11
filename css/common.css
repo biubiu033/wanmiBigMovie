@@ -419,7 +419,7 @@ section { position:absolute; width: 640px; height: 100%; overflow: hidden; displ
 }
 .confirm-pop{
     display: none;
-    background: url("http://wanmiclub.lovemojito.com/wxtest/Public/img/Home/Content/monthSignIn/pop-bg.png")no-repeat;
+    background: url("../images/pop-bg.png")no-repeat;
     background-size: contain;
     height: 47vw;
     width: 80%;
