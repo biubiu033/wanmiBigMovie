@@ -1,0 +1,390 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript">
+            var phoneWidth = parseInt(window.screen.width);
+            var phoneHeight = parseInt(window.screen.height);
+            var phoneScale = phoneWidth / 640;
+            var phoneScale2 = phoneHeight / 1040;
+            var ua = navigator.userAgent;
+            if (/Android (\d+\.\d+)/.test(ua)){
+                var version = parseFloat(RegExp.$1);
+                if(version>2.3){
+                    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+                }else{
+                    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+                }
+            } else {
+                document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+            }
+        </script>
+        <title>万迷大电影</title>
+        <link rel="stylesheet" type="text/css" href="./css/swiper-3.4.2.min.css">
+        <link href="./css/common.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+    <span class="music play"></span>
+    <section id="movie">
+        <canvas id="MovieCanvas" width="640" height="1138"></canvas>
+        <div class="down"><img src="./images/down.png" width="100%"></div>
+    </section>
+    <section id="loader">
+        <div id="loader_bg">
+            <svg class="circular-loader"viewBox="25 25 50 50" >
+                <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke="#ffffff" stroke-width="2" />
+            </svg>
+            <div id="process">0%</div>
+        </div>
+    </section>
+    <section id="popup_open" style="background-color: #ab0000">
+        <div class="img-box" style="height: 43rem;width: 100% ">
+            <img class="open_img" src="images/obj_40_0.png" width="100%">
+            <p class="text-style" id="open-text" style="display: none"></p>
+            <a class="open"></a>
+        </div>
+        <div class="img-box-end" style="height: 43rem;width: 100%; display: none">
+            <div class="end_img" id="end_img" style="background-size:120%;height:43rem;background-position:top;" width="100%" >
+                <div style="height: 100%;width: 100%;background: rgba(0,0,0,0.18);">
+                    <p class="text-style-end" style=""></p>
+                    <a class="end"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="popup_end" style="background-color: #B6050F">
+        <div class="img-box-end" style="height: 43rem;width: 100%;">
+            <div style="background-image:url(images/obj_44_9_0.png);background-size:100%;height:43rem;background-position:center center;" width="100%" >
+                <p class="text-style-end" style=""></p>
+                <a class="end"></a>
+            </div>
+        </div>
+    </section>
+    <section id="popup_sandai">
+        <div class="sandai">
+            <a class="pop_close"><img src="./images/pop_close.png" ></a>
+        </div>
+    </section>
+    <section id="popup_batiao">
+        <div class="batiao">
+            <a class="pop_close"><img src="./images/pop_close.png"></a>
+            <div class="guidePage" style="display: none">
+                <img id="batiaoBoss" src="./images/boss-animation.gif">
+            </div>
+            <div class="swiper-container" style="display: none" >
+                <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                    <h2>万迷故事</h2>
+                    <div style="background: #ffffff;margin: 0.5rem auto;padding-top: 0.1rem;width: 92%;">
+                        <div class="info"><img class="head-img" src="./images/weixin_head.jpg" >
+                            <span class="name">biubiubiu</span><span class="time">2个月前</span>
+                        </div>
+                        <img class="story-img" src="./images/story-img-1.png" >
+                        <div class="text">
+                            今年6月份去了趟三亚，
+                            三亚在海南岛最南端，
+                            被人们称为"东方夏威夷"和"天下第一湾"。
+                            她宛如一颗美丽的浮珠镶嵌在南海碧波之中。
+                        </div>
+                    </div>
+                </div>
+                    <div class="swiper-slide">
+                        <h2>万迷故事</h2>
+                        <div style="background: #ffffff;margin: 0.5rem auto;padding-top: 0.1rem;width: 92%;">
+                            <div class="info"><img class="head-img" src="./images/weixin_head.jpg" >
+                                <span class="name">Single.</span><span class="time">2个月前</span>
+                            </div>
+                            <img class="story-img" src="./images/GoAmericanUgc/1506785902650-thumb.png" >
+                            <div class="text">
+                                没有去过太多的城市
+                                也不是很会照相
+                                这是在我的老家。
+                                我早上去上班的时候照的
+                                虽然没有很华丽的外表 但是它很真实
+                                我在为我的梦想而努力。😊
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>万迷故事</h2>
+                        <div style="background: #ffffff;margin: 0.5rem auto;padding-top: 0.1rem;width: 92%;">
+                            <div class="info"><img class="head-img" src="./images/weixin_head.jpg" >
+                                <span class="name">biubiubiu</span><span class="time">2个月前</span>
+                            </div>
+                            <img class="story-img" src="./images/GoAmericanUgc/1506014710246-thumb.png" >
+                            <div class="text">
+                                凌晨两点的时代广场，看到熟悉的街景跪着哭出来！一个人去NY玩了几天，其中两天报了个尼亚加拉瀑布2日游团，因为行程和别人有点不同，导游忘记告诉我看完瀑布12:30就要和另外一辆车走，so错过回纽约的车…只能努力想办法回NY，后来看到一辆NY牌照的车问能不能搭车，好，400刀…放弃，又决定打车去水牛城坐大巴回NY，但我的uber用不了，又看不到出租车，天还应景地给我下起了雨TT就在导游说要不他远程给我叫一辆（导游要带团接下来的行程已经走了），突然从停车场出来一辆taxi感动地飞奔！到了水牛城，又等到四点多才有
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+
+    </section>
+    <section id="popup_redparty">
+        <div class="redparty">
+            <a class="pop_close"><img src="./images/pop_close.png" ></a>
+            <div class="swiper-container" >
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/red-1.gif" class="story-img3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/red-2.gif" class="story-img3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/red-3.gif" class="story-img3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/red-4.gif" class="story-img3">
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+
+    </section>
+    <section id="popup_gene">
+        <div class="gene">
+            <a class="pop_close"><img src="./images/pop_close.png" ></a>
+            <div class="swiper-container" >
+                <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <h2>万迷海报</h2>
+                            <div class="upload-area-1 mh" style="height: 25rem">
+                                <div class="img"  style="background:url(images/myVoice/150355946218-thumb.png)no-repeat;background-size:contain;background-position:center center"></div>
+                                <img class="mask-on" src="images/temps/temps-0.png" width="100%">
+                            </div>
+                            <p class="gene-text big">演员基因</p>
+                            <p class="gene-text">人生不需要演技，活出自己才够味</p>
+                        </div>
+                    <div class="swiper-slide">
+                        <h2>万迷海报</h2>
+                        <div class="upload-area-1 mh" style="height: 25rem">
+                            <div class="img"  style="background:url(images/myVoice/1503562931924-thumb.png)no-repeat;background-size:contain;background-position:center center"></div>
+                            <img class="mask-on" src="images/temps/temps-1.png" width="100%">
+                        </div>
+                        <p class="gene-text big">演员基因</p>
+                        <p class="gene-text">人生不需要演技，活出自己才够味</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>万迷海报</h2>
+                        <div class="upload-area-1 mh" style="height: 25rem">
+                            <div class="img"  style="background:url(images/myVoice/1503894240692-thumb.png)no-repeat;background-size:contain;background-position:center center"></div>
+                            <img class="mask-on" src="images/temps/temps-2.png" width="100%">
+                        </div>
+                        <p class="gene-text big">演员基因</p>
+                        <p class="gene-text">人生不需要演技，活出自己才够味</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>万迷海报</h2>
+                        <div class="upload-area-1 mh" style="height: 25rem">
+                            <div class="img"  style="background:url(images/myVoice/1503896043482-thumb.png)no-repeat;background-size:contain;background-position:center center"></div>
+                            <img class="mask-on" src="images/temps/temps-3.png" width="100%">
+                        </div>
+                        <p class="gene-text big">演员基因</p>
+                        <p class="gene-text">人生不需要演技，活出自己才够味</p>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+
+        </div>
+
+    </section>
+    <section id="popup_real">
+        <div class="gene">
+            <a class="pop_close"><img src="./images/pop_close.png" ></a>
+            <div class="swiper-container" >
+
+                <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                        <h2>万迷宣言</h2>
+                        <div class="upload-area-1 mh">
+                            <div class="img"  style="background:url(./images/myVoice/150355946218-thumb.png)no-repeat;background-size:contain;background-position:center center"></div>
+                            <img class="mask-on" src="./images/temps/nature-1.png" width="100%">
+                            <div class="info-1">
+                                <div class="head">
+                                    <img src="./images/weixin_head.jpg">
+                                    <span>biubiubiu</span>
+                                </div>
+                                <div class="info-text">#真我宣言#</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>万迷宣言</h2>
+                        <div class="upload-area-1 mh">
+                            <div class="img"  style="background:url(./images/myVoice/1503562931924-thumb.png)no-repeat;background-size:contain;background-position:center center"></div>
+                            <img class="mask-on" src="./images/temps/nature-2.png" width="100%">
+                            <div class="info-1">
+                                <div class="head">
+                                    <img src="./images/weixin_head.jpg">
+                                    <span>biubiubiu</span>
+                                </div>
+                                <div class="info-text">#真我宣言#</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>万迷宣言</h2>
+                        <div class="upload-area-1 mh">
+                            <div class="img"  style="background:url(./images/myVoice/1503896043482-thumb.png)no-repeat;background-size:contain;background-position:center center"></div>
+                            <img class="mask-on" src="./images/temps/nature-3.png" width="100%">
+                            <div class="info-1">
+                                <div class="head">
+                                    <img src="./images/weixin_head.jpg">
+                                    <span>biubiubiu</span>
+                                </div>
+                                <div class="info-text">#真我宣言#</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+
+    </section>
+    <section id="popup_fashion">
+        <div class="gene">
+            <a class="pop_close"><img src="./images/pop_close.png" ></a>
+            <div class="swiper-container" >
+
+                <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <h2>万迷潮图</h2>
+                            <div class="upload-area-1 mh">
+                                <div class="img"  style="background:url(./images/GoAmericanUgc/1492088697719-thumb.png)no-repeat;background-size:contain;background-position:center center"></div>
+                                <div class="info-1">
+                                    <div class="head">
+                                        <img src="./images/weixin_head.jpg">
+                                        <span>biubiubiu</span>
+                                    </div>
+                                    <div class="info-text">酷炫机车</div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="swiper-slide">
+                        <h2>万迷潮图</h2>
+                        <div class="upload-area-1 mh">
+                            <div class="img"  style="background:url(./images/GoAmericanUgc/1492088945709-thumb.png)no-repeat;background-size:contain;background-position:center center"></div>
+                            <div class="info-1">
+                                <div class="head">
+                                    <img src="./images/weixin_head.jpg">
+                                    <span>biubiubiu</span>
+                                </div>
+                                <div class="info-text">酷炫机车</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>万迷潮图</h2>
+                        <div class="upload-area-1 mh">
+                            <div class="img"  style="background:url(./images/GoAmericanUgc/1492088957756-thumb.png)no-repeat;background-size:contain;background-position:center center"></div>
+                            <div class="info-1">
+                                <div class="head">
+                                    <img src="./images/weixin_head.jpg">
+                                    <span>biubiubiu</span>
+                                </div>
+                                <div class="info-text">酷炫机车</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>万迷潮图</h2>
+                        <div class="upload-area-1 mh">
+                            <div class="img"  style="background:url(./images/GoAmericanUgc/1492088991525-thumb.png)no-repeat;background-size:contain;background-position:center center"></div>
+                            <div class="info-1">
+                                <div class="head">
+                                    <img src="./images/weixin_head.jpg">
+                                    <span>biubiubiu</span>
+                                </div>
+                                <div class="info-text">酷炫机车</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+
+    </section>
+    <section id="popup_form">
+        <a class="pop_close"><img src="./images/pop_close.png" ></a>
+        <div id="question-wrap">
+            <div class="select-bg">
+                <div class="location" id="location">
+                    <div id="location_info"><p>所在地区<span style="float: right;">请选择   ></span></p></div>
+                </div>
+                <div class="location" style="padding-top: 6vw;">
+                    <span>街道</span><input class="locaInput" placeholder="请填写烟店所在街道或具体店铺的名称">
+                </div>
+            </div>
+            <a id="submitBtn"><div class="question-foot" ></div></a>
+        </div>
+    </section>
+    <section id="location_hover">
+        <div id="location_content">
+            <div id="location_title">所在地区</div>
+            <div id="container_close"><img src="./images/pop_close.png"></div>
+            <div id="location_title_area"></div>
+            <div id="location_title_line"></div>
+            <div id="line_select"></div>
+            <div id="area1_title">请选择</div>
+            <div id="area2_title">请选择</div>
+            <div id="area1_content"></div>
+            <div id="area2_content"></div>
+        </div>
+    </section>
+    <section class="confirm-pop" id="confirm">
+        <p style="width: 80%;margin: 0 auto;text-align: center">感谢你一直以来对万迷聚乐部的支持，
+            <span style="font-size: 1.2rem;font-weight: bold">20奖励积分</span>即将放入你的账户</p>
+        <a class="sure b-close"><img src="images/btn3.png" width="100%"></a>
+    </section>
+
+    <script>
+        var c= null;
+        var nickName = 'biubiubiu';
+        var charLong = nickName.length;
+        var did = false;
+        var myAddtime = '2017年6月6日';
+        var meetNum = 265;
+        var endImg = '';
+        var music = 1;
+
+
+
+    </script>
+    <script language="javascript" src="js/responsive.js"></script>
+    <script type="text/javascript" src="./js/jquery-2.1.3.min.js"></script>
+    <script language="javascript" src="js/swiper-3.4.2.min.js"></script>
+    <script language="javascript" src="js/jquery.bpopup.js"></script>
+    <script>
+        var text_style_end = $('.text-style-end');
+        var popEnd = $('#popup_end');
+        var endImgBox = $('#end_img'); //endbox放片头去了
+    </script>
+    <script language="javascript" src="js/page_loader.js?1"></script>
+    <script language="javascript" src="js/debug.js"></script>
+    <script language="javascript" src="js/main.js"></script>
+    <script language="javascript" src="./page.js?719880954"></script>
+    <script language="javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    </body>
+
+    </html>
+

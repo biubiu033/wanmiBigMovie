@@ -1,0 +1,635 @@
+/* CSS Document */
+
+body { width:640px; height: 100%;  overflow: hidden; margin: 0px; background: #CDE2DB; position:absolute; left: 0px; top: 0px;}
+
+section { position:absolute; width: 640px; height: 100%; overflow: hidden; display: none;}
+
+#loader { }
+#loader #loader_bg {position: absolute;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: url("../images/loader.png")no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#loader #loader_icon { position:absolute; width: 220px; left: 210px; height: 220px; top: 40%; margin-top: -100px; }
+#loader #process,.circular-loader{
+    margin-top:-13rem;
+    text-align:center;
+    font-family:"黑体";
+    color:#ffffff;
+    font-weight:bold;
+    font-size:3.3rem;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-3.5rem;
+    margin-top:-2rem;
+}
+.sandai{
+    position: relative;
+    background: url(../images/pop_1.png)no-repeat;
+    background-size: 92%;
+    background-position: center;
+    width: 93%;
+    margin: 0 auto;
+    height: 43rem;
+}
+.redparty{
+    position: relative;
+    background: url(../images/pop_4.png)no-repeat;
+    background-size: 92%;
+    background-position: center;
+    width: 93%;
+    margin: 0 auto;
+    height: 43rem;
+}
+.batiao{
+    position: relative;
+    background: url(../images/pop_3.png)no-repeat;
+    background-size: 92%;
+    background-position: center;
+    width: 91%;
+    margin: 0 auto;
+    height: 42rem;
+}
+.gene{
+    position: relative;
+    background: url(../images/pop_5.png)no-repeat;
+    background-size: 92%;
+    background-position: center;
+    width: 91%;
+    margin: 0 auto;
+    height: 42rem;
+}
+.guidePage{
+    box-sizing: border-box;
+    padding-top: 2.2rem;
+    text-align: center;
+    width: 99%;
+}
+/*.swiper-container{
+    position: relative;
+    background: url(../images/pop_3.png)no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 84%;
+    margin: 0 auto;
+    height: 43rem;
+}*/
+.swiper-container{
+/*    box-sizing: border-box;
+    padding: 3.5rem 1.3rem 0 0.8rem;*/
+    box-sizing: border-box;
+    width: 85%;
+    margin-right: 2.0rem;
+    padding: 2rem 0;
+}
+.swiper-wrapper h2{
+    margin: 1.1rem 1rem 1rem;
+    font-style: oblique;
+    color: #ffffff;
+    letter-spacing: 5px;
+}
+.swiper-slide{
+    /*margin: 1rem 0 0 0.8rem;*/
+    width: 90%;
+}
+.swiper-button-prev{
+    background-image: url(../images/prev.png);
+    width: 4.5rem;
+    height: 4.5rem;
+    background-size: contain;
+    left: -20px;
+    top: 46%;
+}
+.swiper-button-next{
+    background-image: url(../images/next.png);
+    width: 4.5rem;
+    height: 4.5rem;
+    background-size: contain;
+    right: -20px;
+    top: 46%;
+}
+.info{
+    display: flex;
+    align-items: center;
+    height: 3.2rem;
+    /* line-height: 3.2rem; */
+    margin: 0.8rem 1.3rem 0.5rem;
+}
+.head-img{
+    display: inline-block;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+}
+.story-img{
+    height: 13rem;
+    display: block;
+    margin: 0 auto;
+}
+.story-img2{
+    display: block;
+    width: 92%;
+    margin: 0.6rem auto;
+}
+.story-img3{
+    display: block;
+    width: 83%;
+    margin: 1.4rem 1rem 1rem 1.6rem;
+}
+.name{
+    font-size: 1.1rem;
+    margin-left: 0.7rem;
+    font-weight: bold;
+}
+.time{
+    color: #6a6a6a;
+    font-size: 0.7rem;
+    margin-left: 2rem;
+}
+.text{
+    width: 88%;
+    height: 11rem;
+    overflow: scroll;
+    line-height: 1.5rem;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    padding: 0 0.5rem 0.5rem;
+    margin: 0.5rem 1.3rem 0;
+}
+.guidePage img{
+    width: 89%;
+    border-radius: 15px;
+}
+.big{
+    font-size: 1.4rem;
+}
+.gene-text{
+    margin: 0 0;
+    text-align: center;
+    color: #ffffff;
+    font-style: oblique;
+}
+.pop_close{
+    display: block;
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    top: 1.0rem;
+    right: 1rem;
+    z-index: 2;
+}
+.pop_close img{
+    width: 53%;
+    float: right;
+}
+.upload-area-1{
+    margin: 0 1.0rem;
+    height: 31rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    background-position: center;
+    position: relative;
+    background: #000000;
+}
+.upload-area-1 .img{
+    width: 78%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+    height: 69%;
+}
+.mask-on{
+    display: block;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    width: 78%;
+}
+.info-1{
+    /*margin: 0 2rem;*/
+    width: 90%;
+    margin: 0 auto;
+}
+.head{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+.head img{
+    display: inline-block;
+    border-radius: 50%;
+    height:2rem;
+    width: 2rem;
+}
+.head span{
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-left: 0.5rem;
+}
+.info-text{
+    color: #ffffff;
+    font-size: 1.0rem;
+    width: 100%;
+    text-align: left;
+    height: 3rem;
+    overflow: scroll;
+}
+
+#popup_form{
+    position: relative;
+    background: url(../images/pop_5.png)no-repeat;
+    background-size: 92%;
+    background-position: center;
+    box-sizing: border-box;
+    padding-top: 1.75rem;
+    width: 91%;
+    margin: 0 auto;
+    height: 42rem;
+}
+.select-bg{
+    background: url(http://wanmiclub.lovemojito.com/wxtest/Public/img/Home/Content/monthSignIn/select-bg.png)no-repeat;
+    background-size: contain;
+    background-position: top center;
+    width: 81%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 10.3rem;
+}#question-wrap{
+     width: 90%;
+     height: 19rem;
+     margin: 0 0 0 1rem;
+     background: url(http://wanmiclub.lovemojito.com/wxtest/Public/img/Home/Content/monthSignIn/question-bg.png)no-repeat;
+     background-size: 100%;
+     background-position: top center;
+     padding-top: 20rem;
+     border-radius: 26px;
+ }
+.question-foot{
+    background: url("http://wanmiclub.lovemojito.com/wxtest/Public/img/Home/Content/monthSignIn/confirm-btn.png")no-repeat;
+    background-size: contain;
+    background-position: top center;
+    width: 100%;
+    height: 2.7rem;
+    margin-top: 2rem;
+}
+#location_hover, #legal_hover {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 2rem;
+}
+
+#location_hover {
+    z-index: 999;
+}
+
+#legal_hover {
+    z-index: 20;
+}
+
+#location_content {
+    width: 80%;
+    height: 87%;
+    margin: 0 auto;
+    overflow: scroll;
+    background-color: #ffffff;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+}
+
+#location_title {
+    width: 100%;
+    height: 8.31vw;
+    color: #b1b1b1;
+    font-size: 4vw;
+    text-align: center;
+    padding-top: 2vw;
+}
+
+#container_close {
+    width: 9.38vw;
+    height: 9.38vw;
+    position: relative;
+    top: -10vw;
+    right: -70vw;
+}
+
+#location_title_area {
+    width: 100%;
+    height: 8vw;
+    position: relative;
+    top: -10vw;
+}
+
+#location_title_line {
+    width: 100vw;
+    height: 0.5vw;
+    position: relative;
+    top: -10vw;
+    background-color: #e6e6e6;
+}
+.location {
+    width: 65vw;
+    margin: 0 auto;
+    height: 12vw;
+    padding-top: 3vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #f2f2f4;
+    font-size: 3.3vw;
+    border-bottom: 1px rgba(242,242,244,0.5) solid;
+}
+
+#line_select {
+    width: 15vw;
+    height: 0.5vw;
+    position: relative;
+    top: -10.5vw;
+    left: 3vw;
+    /*float: left;*/
+    background-color: #e0002a;
+}
+
+#area1_title {
+    width: 24vw;
+    height: 8vw;
+    position: relative;
+    top: -18vw;
+    color: #e0002a;
+    font-size: 4vw;
+    padding-left: 4vw;
+    float: left;
+}
+
+#area2_title {
+    width: 49vw;
+    height: 8vw;
+    position: relative;
+    top: -18vw;
+    color: #e0002a;
+    font-size: 4vw;
+    float: left;
+    display: none;
+}
+
+#area1_content {
+    width: 100vw;
+    height: 84vh;
+    position: relative;
+    top: -18vw;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+#area2_content {
+    width: 100vw;
+    height: 84vh;
+    position: relative;
+    top: -18vw;
+    overflow-y:scroll;
+    display: none;
+    z-index: 999;
+}
+.area1_list {
+    width: 80vw;
+    height: 5vw;
+    font-size: 4vw;
+    padding: 2.5vw 0 2.5vw;
+    margin-left: 4vw;
+}
+
+.area2_list {
+    display:block;
+    width: 80vw;
+    height: 5vw;
+    font-size: 4vw;
+    padding: 2.5vw 0 2.5vw;
+    margin-left: 4vw;
+}
+.confirm-pop{
+    display: none;
+    background: url("http://wanmiclub.lovemojito.com/wxtest/Public/img/Home/Content/monthSignIn/pop-bg.png")no-repeat;
+    background-size: contain;
+    height: 47vw;
+    width: 80%;
+    color: #bf0001;
+    font-size: 1.0rem;
+    box-sizing: border-box;
+    padding-top: 13vw;
+    text-align: center;
+}
+.sure{
+    display: block;
+    width: 30vw;
+    height: 10vw;
+    margin: 1.5rem auto 0;
+}
+.btnstyle{
+    display: inline-block;
+    width: 30vw;
+    height: 10vw;
+    margin: 1.5rem auto 0;
+}
+.locaInput{
+    border: none;
+    background: none;
+    margin-left: 1rem;
+    outline: none;
+    width: 13rem;
+    font-size: 1rem;
+    color: #f2f2f4;
+}
+.text-style{
+    text-align: center;
+    margin-top: -27.3rem;
+    color: #ffffff;
+    /*  text-shadow: 6px 3px 1px #9a0e0c;*/
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: "黑体";
+}
+.text-style-end{
+    position:absolute;
+    top:16rem;
+    width:100%;
+    text-align:center;
+    /* margin-top:-27rem; */
+    color:#ffffff;
+    font-style: oblique;
+    font-weight:bold;
+    font-size:1.8rem;
+    font-family: "黑体";
+}
+
+.open {
+    position: absolute;
+    display: none;
+    width: 22rem;
+    left: 3.5rem;
+    height: 40rem;
+    bottom: 1rem;
+}
+
+.open_img{
+    margin-top: -1.2rem;
+}
+.end {
+    position: absolute;
+    /* display: none; */
+    width: 30rem;
+    left: 1rem;
+    height: 10rem;
+    bottom: 3rem;
+}
+.end_img{
+    -webkit-animation-name: scaleDraw;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes scaleDraw {
+    0% {
+        -webkit-transform:scale(1);
+    }
+    50% {
+        -webkit-transform:scale(1.1);
+    }
+    100% {
+        -webkit-transform:scale(1);
+    }
+}
+
+
+
+.circular-loader{
+    -webkit-animation:rotate 2s linear infinite;;
+    animation:rotate 2s linear infinite;
+    height:14rem;
+    -webkit-transform-origin:center center;
+    -ms-transform-origin:center center;
+    transform-origin:center center;
+    width:14rem;
+    margin-top:-7rem;
+    margin-left:-7rem;
+}
+
+.loader-path {
+    stroke-dasharray: 150,200;
+    stroke-dashoffset: -10;
+    -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    stroke-linecap: round;
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes dash {
+    0% {
+        stroke-dasharray: 1,200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89,200;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 89,200;
+        stroke-dashoffset: -124;
+    }
+}
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1,200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89,200;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 89,200;
+        stroke-dashoffset: -124;
+    }
+}
+@-webkit-keyframes color {
+    0% {
+        stroke: #ffffff;
+    }
+    40% {
+        stroke: #ffffff;
+    }
+    66% {
+        stroke: #ffffff;
+    }
+    80%, 90% {
+        stroke: #ffffff;
+    }
+}
+@keyframes color {
+    0% {
+        stroke: #ffffff;
+    }
+    40% {
+        stroke: #ffffff;
+    }
+    66% {
+        stroke: #ffffff;
+    }
+    80%, 90% {
+        stroke: #ffffff;
+    }
+}
+.down{
+    width: 1.7rem;
+    height: 7rem;
+    position: fixed;
+    bottom: 0;
+    right: 1rem;
+}
+.music {
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background-image: url(../images/music-stop.png);
+    background-size: contain;
+    z-index: 99999999;
+}
+.music.play {
+    background-image: url('../images/music.png');
+}
+::-webkit-input-placeholder{
+    color: #f2f2f4;
+    font-size: 2.8vw;
+}
+::-moz-placeholder{
+    color: #f2f2f4;
+    font-size:2.8vw;
+}
+
